@@ -1,0 +1,323 @@
+student@Ubuntu-MySQL-VirtualBox:~$ whoami
+student
+student@Ubuntu-MySQL-VirtualBox:~$ pwd
+/home/student
+student@Ubuntu-MySQL-VirtualBox:~$ clear
+
+student@Ubuntu-MySQL-VirtualBox:~$ whoami
+student
+student@Ubuntu-MySQL-VirtualBox:~$ pwd
+/home/student
+student@Ubuntu-MySQL-VirtualBox:~$ ll
+итого 160
+drwxr-xr-x 23 student student 4096 июн 12 19:16 ./
+drwxr-xr-x  3 root    root    4096 апр 22  2019 ../
+-rw-------  1 student student  878 июн 12 18:40 .bash_history
+-rw-r--r--  1 student student  220 апр 22  2019 .bash_logout
+-rw-r--r--  1 student student 3771 апр 22  2019 .bashrc
+drwx------ 15 student student 4096 апр 22  2019 .cache/
+drwx------ 15 student student 4096 апр 22  2019 .config/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .dbeaver4/
+drwxrwxr-x  3 student student 4096 апр 22  2019 .dbeaver-drivers/
+drwx------  3 student student 4096 июн 12 18:37 .dbus/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .eclipse/
+-rw-r--r--  1 student student 8980 апр 22  2019 examples.desktop
+drwx------  2 student student 4096 апр 22  2019 .gconf/
+drwx------  3 student student 4096 июн 12 18:43 .gnupg/
+-rw-------  1 student student 2702 июн 12 18:43 .ICEauthority
+drwx------  3 student student 4096 апр 22  2019 .local/
+drwx------  5 student student 4096 апр 22  2019 .mozilla/
+drwx------  3 student student 4096 апр 22  2019 .mysql/
+-rw-------  1 root    root     192 июн 12 19:16 .mysql_history
+drwxrwxr-x  2 student student 4096 апр 22  2019 .nano/
+-rw-r--r--  1 student student  655 апр 22  2019 .profile
+-rw-rw-r--  1 student student   66 апр 22  2019 .selected_editor
+-rw-r--r--  1 student student    0 апр 22  2019 .sudo_as_admin_successful
+drwxrwxr-x  2 student student 4096 апр 22  2019 .swt/
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-clipboard.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-display.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-draganddrop.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-seamless.pid
+-rw-------  1 student student   68 июн 12 18:43 .Xauthority
+-rw-------  1 student student  111 июн 12 18:43 .xsession-errors
+-rw-------  1 student student 1860 июн 12 18:40 .xsession-errors.old
+drwxr-xr-x  2 student student 4096 апр 22  2019 Видео/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Документы/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Загрузки/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Изображения/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Музыка/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Общедоступные/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Рабочий стол/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Шаблоны/
+student@Ubuntu-MySQL-VirtualBox:~$ touch .my.cnf
+student@Ubuntu-MySQL-VirtualBox:~$ nano .my.cnf
+student@Ubuntu-MySQL-VirtualBox:~$ cat .my.cnf
+# Моя эпопея с установкой MySQL длилась примерно неделю и, похоже, что методичка устарела, т.к. при установке сервера MySQL никаких паролей для рута
+# не спрашивалось. Он просто вставал, запуск был невозможен т.к. гугление дало понять, в базе не установлен пароль для рута.
+# Я пытался гуглит решение прблемы и даже один рах смог ее решит, но это было на рабочем компе, на домашнем ничего не помогало, пока я не плюнул
+# и не развернул виртуалку, котрая была прикреплена к первой домашке, но я не знал пароля для рута, который студент, будь он проклят.
+# Я опять загуглил как сбрасывать пароль для рута у Убунте и сбросил его на пароль=пароль
+
+login: student
+password: password
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+[sudo] пароль для student:
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ sudo -uroot -p
+sudo: ключ должен использоваться с аргументом — «p»
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-u user] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-u user] file ...
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -uroot -p
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ su root
+Пароль:
+su: Сбой при проверке подлинности
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -u root -p
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ nano .my.cnf
+student@Ubuntu-MySQL-VirtualBox:~$ cat .my.cnf
+# Моя эпопея с установкой MySQL длилась примерно неделю и, похоже, что методичка устарела, т.к. при установке сервера MySQL никаких паролей для рута
+# не спрашивалось. Он просто вставал, запуск был невозможен т.к. гугление дало понять, в базе не установлен пароль для рута.
+# Я пытался гуглит решение прблемы и даже один рах смог ее решит, но это было на рабочем компе, на домашнем ничего не помогало, пока я не плюнул
+# и не развернул виртуалку, котрая была прикреплена к первой домашке, но я не знал пароля для рута, который студент, будь он проклят.
+# Я опять загуглил как сбрасывать пароль для рута у Убунте и сбросил его на пароль=пароль
+
+user=student
+password=password
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -u root -p
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ nano .my.cnf
+student@Ubuntu-MySQL-VirtualBox:~$ cat .my.cnf
+# Моя эпопея с установкой MySQL длилась примерно неделю и, похоже, что методичка устарела, т.к. при установке сервера MySQL никаких паролей для рута
+# не спрашивалось. Он просто вставал, запуск был невозможен т.к. гугление дало понять, в базе не установлен пароль для рута.
+# Я пытался гуглит решение прблемы и даже один рах смог ее решит, но это было на рабочем компе, на домашнем ничего не помогало, пока я не плюнул
+# и не развернул виртуалку, котрая была прикреплена к первой домашке, но я не знал пароля для рута, который студент, будь он проклят.
+# Я опять загуглил как сбрасывать пароль для рута у Убунте и сбросил его на пароль=пароль
+
+user=root
+password=password
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -u root -p
+mysql: [ERROR] Found option without preceding group in config file /home/student/.my.cnf at line 7!
+mysql: [ERROR] Fatal error in defaults handling. Program aborted!
+student@Ubuntu-MySQL-VirtualBox:~$ ll
+итого 164
+drwxr-xr-x 23 student student 4096 июн 12 19:41 ./
+drwxr-xr-x  3 root    root    4096 апр 22  2019 ../
+-rw-------  1 student student  878 июн 12 18:40 .bash_history
+-rw-r--r--  1 student student  220 апр 22  2019 .bash_logout
+-rw-r--r--  1 student student 3771 апр 22  2019 .bashrc
+drwx------ 15 student student 4096 апр 22  2019 .cache/
+drwx------ 15 student student 4096 апр 22  2019 .config/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .dbeaver4/
+drwxrwxr-x  3 student student 4096 апр 22  2019 .dbeaver-drivers/
+drwx------  3 student student 4096 июн 12 18:37 .dbus/
+drwxrwxr-x  4 student student 4096 апр 22  2019 .eclipse/
+-rw-r--r--  1 student student 8980 апр 22  2019 examples.desktop
+drwx------  2 student student 4096 апр 22  2019 .gconf/
+drwx------  3 student student 4096 июн 12 18:43 .gnupg/
+-rw-------  1 student student 2702 июн 12 18:43 .ICEauthority
+drwx------  3 student student 4096 апр 22  2019 .local/
+drwx------  5 student student 4096 апр 22  2019 .mozilla/
+-rw-rw-r--  1 student student 1170 июн 12 19:41 .my.cnf
+drwx------  3 student student 4096 апр 22  2019 .mysql/
+-rw-------  1 root    root     192 июн 12 19:16 .mysql_history
+drwxrwxr-x  2 student student 4096 апр 22  2019 .nano/
+-rw-r--r--  1 student student  655 апр 22  2019 .profile
+-rw-rw-r--  1 student student   66 апр 22  2019 .selected_editor
+-rw-r--r--  1 student student    0 апр 22  2019 .sudo_as_admin_successful
+drwxrwxr-x  2 student student 4096 апр 22  2019 .swt/
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-clipboard.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-display.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-draganddrop.pid
+-rw-r-----  1 student student    5 июн 12 18:43 .vboxclient-seamless.pid
+-rw-------  1 student student   68 июн 12 18:43 .Xauthority
+-rw-------  1 student student  111 июн 12 18:43 .xsession-errors
+-rw-------  1 student student 1860 июн 12 18:40 .xsession-errors.old
+drwxr-xr-x  2 student student 4096 апр 22  2019 Видео/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Документы/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Загрузки/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Изображения/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Музыка/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Общедоступные/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Рабочий стол/
+drwxr-xr-x  2 student student 4096 апр 22  2019 Шаблоны/
+student@Ubuntu-MySQL-VirtualBox:~$ nano .my.cnf
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$ cat .my.cnf
+# Моя эпопея с установкой MySQL длилась примерно неделю и, похоже, что методичка устарела, т.к. при установке сервера MySQL никаких паролей для рута
+# не спрашивалось. Он просто вставал, запуск был невозможен т.к. гугление дало понять, в базе не установлен пароль для рута.
+# Я пытался гуглит решение прблемы и даже один рах смог ее решит, но это было на рабочем компе, на домашнем ничего не помогало, пока я не плюнул
+# и не развернул виртуалку, котрая была прикреплена к первой домашке, но я не знал пароля для рута, который студент, будь он проклят.
+# Я опять загуглил как сбрасывать пароль для рута у Убунте и сбросил его на пароль=пароль
+[mysql]
+user=root
+password=password
+student@Ubuntu-MySQL-VirtualBox:~$ # It works!!!!
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE example;
+Query OK, 1 row affected (0,00 sec)
+
+mysql> USE example;
+Database changed
+mysql> CREATE TABLE IF NOT EXISTS user (id SERIAL, name VARCHAR(255) NOT NULL UNIQUE);
+Query OK, 0 rows affected (0,03 sec)
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$ mysqldump exaple > example.aql
+mysqldump: Got error: 1045: Access denied for user 'student'@'localhost' (using password: NO) when trying to connect
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysqldump exaple > example.aql
+mysqldump: Got error: 1045: Access denied for user 'root'@'localhost' (using password: NO) when trying to connect
+student@Ubuntu-MySQL-VirtualBox:~$ mysqldump -u root -p example > example.sql
+Enter password:
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0,00 sec)
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$ mysql -u root -p sample < example.sql
+Enter password:
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| example            |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+6 rows in set (0,00 sec)
+
+mysql> USE sample;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_sample |
++------------------+
+| user             |
++------------------+
+1 row in set (0,00 sec)
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$ mysqldump -u root -p mysql help_keyword --where='TRUE LIMIT 100' > help_keyword_report.sql
+Enter password:
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 5.7.25-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| example            |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+6 rows in set (0,00 sec)
+
+mysql> exit;
+Bye
+student@Ubuntu-MySQL-VirtualBox:~$
+
